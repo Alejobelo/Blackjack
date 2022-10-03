@@ -102,10 +102,10 @@ const miModulo = (() => {
         
             if (puntosJugadores[0] > puntosJugadores[1] && puntosJugadores[0] < 22 || puntosJugadores[0] < 22 && puntosJugadores[1] > 21) {
                 
-            alert("Ganaste Bece¡")
+            alert("¡Ganaste!")
             } else if (puntosJugadores[1] > puntosJugadores[0] && puntosJugadores[1] < 22 || puntosJugadores[1] < 22 && puntosJugadores[0] > 21)  {
                 
-            alert("gano la computadora")
+            alert("Gano la computadora")
             } else if ( puntosJugadores[1] === puntosJugadores[0] || puntosJugadores > 42 ) {
                 
             alert("No hay ganador")
