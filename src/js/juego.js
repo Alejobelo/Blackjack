@@ -113,7 +113,7 @@ const miModulo = (() => {
             else{
                 alert("error")
             }
-        }, 18);
+        }, 1000);
 
 
     }
