@@ -65,19 +65,6 @@ const miModulo = (() => {
                 (valor === "A") ? 11 : 10
                 : valor * 1;
     }
-
-    //     //let puntos = 0;
-    //     if( isNaN( valor ) ){
-            
-    //         puntos = (valor === "A") ? 11: 10;
-    //         console.log(puntos)
-    //     } else{
-    //         console.log("Es numero");
-    //         puntos = valor * 1;
-            
-    //     }
-        
-    // }
     // turno: 0 = primer jugador y el ultimo corresponde a la computadora
     const puntosAcumulados = (carta, turno) => {
 
@@ -88,7 +75,6 @@ const miModulo = (() => {
     }
 
     const crearCarta = (carta, turno) => {  
-
         const imgCarta = document.createElement("img");
         imgCarta.src = `src/cartas/${ carta }.png`;
         imgCarta.classList.add("carta")
@@ -100,18 +86,15 @@ const miModulo = (() => {
         
         setTimeout(() => {
         
-            if (puntosJugadores[0] > puntosJugadores[1] && puntosJugadores[0] < 22 || puntosJugadores[0] < 22 && puntosJugadores[1] > 21) {
-                
+            if (puntosJugadores[0] > puntosJugadores[1] && puntosJugadores[0] < 22 || puntosJugadores[0] < 22 && puntosJugadores[1] > 21) {    
             alert("¡Ganaste!")
             } else if (puntosJugadores[1] > puntosJugadores[0] && puntosJugadores[1] < 22 || puntosJugadores[1] < 22 && puntosJugadores[0] > 21)  {
-                
             alert("Gano la computadora")
-            } else if ( puntosJugadores[1] === puntosJugadores[0] || puntosJugadores > 42 ) {
-                
+            } else if ( puntosJugadores[1] === puntosJugadores[0] || puntosJugadores > 42 ) { 
             alert("No hay ganador")
             }
             else{
-                alert("error")
+            alert("error")
             }
         }, 1000);
 
@@ -119,21 +102,11 @@ const miModulo = (() => {
     }
     // Turno de la computadora
     const turnoComputadora = () => {
-
- 
         do { 
         const carta = pedirCarta();
         puntosAcumulados(carta, puntosJugadores.length - 1)
-
         crearCarta(carta, puntosJugadores.length - 1)
-
-        // const imgCarta = document.createElement("img");
-        // imgCarta.src = `src/cartas/${ carta }.png`;
-        // imgCarta.classList.add("carta")
-        
-        // divCartasComputadora.append(imgCarta)
         } while (puntosJugadores[1] < 16);
-        
         determinarGanador()
     } 
     
